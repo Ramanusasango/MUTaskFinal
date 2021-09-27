@@ -1,0 +1,49 @@
+.site-title {
+
+	color: var(--branding--color-link);
+	font-family: var(--branding--title--font-family);
+	font-size: var(--branding--title--font-size-mobile);
+	letter-spacing: normal;
+	text-transform: var(--branding--title--text-transform);
+	line-height: var(--global--line-height-heading);
+	margin-bottom: calc(var(--global--spacing-vertical) / 6);
+    animation: blinker 0.6s linear infinite;
+
+	a {
+		color: currentColor;
+		font-weight: var(--branding--title--font-weight);
+
+		&:link,
+		&:visited,
+		&:active {
+			color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--branding--color-link-hover);
+		}
+
+	}
+
+    @keyframes blinker {
+        50% { opacity: 0; }
+        }
+        .blink-one {
+        animation: blinker-one 1s linear infinite;
+        }
+        @keyframes blinker-one {
+        0% { opacity: 0; }
+        }
+        .blink-two {
+        animation: blinker-two 1.4s linear infinite;
+        }
+        @keyframes blinker-two {
+        100% { opacity: 0; }
+        }
+  
+
+	@include media(mobile) {
+		font-size: var(--branding--title--font-size);
+	}
+}
